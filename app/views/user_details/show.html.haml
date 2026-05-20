@@ -40,13 +40,13 @@
           %td.govuk-table__cell
         - if @user_logs.present?
           %tr.govuk-table__row
-            %td.govuk-table__cell User log(s)
+            %td.govuk-table__cell Previous logins
             %td.govuk-table__cell
               - @user_logs.each_with_index do |log, i|
                 %ul.govuk-list.govuk-list
                   %li
                     %strong Date:
-                    = Time.parse(log.date).utc.strftime("%d %B %Y, %l:%M %p")
+                    = Time.parse(log.date).utc.strftime("%d %B %Y %H:%M UTC")
                   %li
                     %strong IP:
                     = log.ip
