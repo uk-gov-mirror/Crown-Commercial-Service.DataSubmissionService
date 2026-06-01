@@ -3,7 +3,7 @@ OmniAuth.config.logger = Rails.logger
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :developer unless Rails.env.production?
 
-  auth0_domain = ENV.fetch('AUTH0_DOMAIN')
+  auth0_domain = ENV['AUTH0_DOMAIN']
   auth0_user_info_domain = ENV.fetch('AUTH0_USER_INFO_DOMAIN', auth0_domain)
 
   provider(
