@@ -293,7 +293,7 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     netrc (0.11.0)
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -344,7 +344,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (6.4.3)
+    puma (7.2.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.6)
@@ -561,7 +561,7 @@ DEPENDENCIES
   poltergeist (>= 1.18.1)
   prism (~> 1.4)
   pry-rails
-  puma (~> 6.4, >= 6.4.3)
+  puma (~> 7.2)
   rack-maintenance (~> 3.0)
   rails (~> 8.1, >= 8.1.2.1)
   rollbar
