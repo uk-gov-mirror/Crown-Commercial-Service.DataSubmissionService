@@ -1,0 +1,8 @@
+- page_title 'Email Verification'
+%div{ class: "govuk-panel govuk-panel--confirmation govuk-!-margin-top-6 govuk-!-margin-bottom-6" }
+  %h1.govuk-panel__title
+    Email Verification
+  %div.govuk-panel__body
+    = @message
+    %p{class: 'govuk-!-margin-top-3'}
+      = button_to 'Sign in', '/auth/auth0', class: 'govuk-button govuk-button--start govuk-!-margin-bottom-0', id: 'sign-in', 'aria-label' => "Sign in to the service"
