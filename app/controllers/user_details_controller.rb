@@ -50,14 +50,16 @@ class UserDetailsController < ApplicationController
   end
 
   def deactivate_confirmation
-    unless current_user.can_deactivate?
-      return redirect_to user_detail_path, alert: 'You cannot deactivate your account because you are the only active user for a linked supplier.'
-    end
+    return if current_user.can_deactivate?
+
+    redirect_to user_detail_path,
+                alert: 'You cannot deactivate your account because you are the only active user for a linked supplier.'
   end
 
   def deactivate
     unless current_user.can_deactivate?
-      return redirect_to user_detail_path, alert: 'You cannot deactivate your account because you are the only active user for a linked supplier.'
+      return redirect_to user_detail_path,
+                         alert: 'You cannot deactivate your account because you are the only active user for a linked supplier.'
     end
 
     API::User.deactivate
@@ -66,9 +68,11 @@ class UserDetailsController < ApplicationController
 
     redirect_to root_path, notice: 'Your account has been deactivated.'
   rescue JSONAPI::Consumer::Errors::UnprocessableEntity
-    redirect_to user_detail_path, alert: 'You can no longer deactivate your account because you are the only active user for a linked supplier.'
+    redirect_to user_detail_path,
+                alert: 'You can no longer deactivate your account because you are the only active user for a linked supplier.'
   rescue JSONAPI::Consumer::Errors::ConnectionError
-    redirect_to deactivate_confirmation_user_detail_path, alert: 'There was a problem connecting to the user service. Please try again later.'
+    redirect_to deactivate_confirmation_user_detail_path,
+                alert: 'There was a problem connecting to the user service. Please try again later.'
   end
 
   private

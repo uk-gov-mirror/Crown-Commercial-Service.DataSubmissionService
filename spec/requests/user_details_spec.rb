@@ -85,7 +85,7 @@ RSpec.describe 'the user details page' do
         expect(response).to redirect_to(user_detail_path)
         follow_redirect!
 
-        expect(response.body).to include 'You cannot deactivate your account because you are the only active user for a linked supplier.'
+        expect(response.body).to include 'You cannot deactivate your account because you are the only active user for'
       end
     end
   end

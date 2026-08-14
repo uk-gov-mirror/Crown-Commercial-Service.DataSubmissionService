@@ -15,7 +15,7 @@ RSpec.describe 'deactivating an account' do
     visit '/'
     click_button 'sign-in'
     visit user_detail_path
-    
+
     click_link 'Deactivate account'
 
     expect(page).to have_content 'Deactivate my account'
